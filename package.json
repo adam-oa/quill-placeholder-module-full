@@ -1,5 +1,5 @@
 {
-  "name": "quill-placeholder-module",
+  "name": "quill-placeholder-module-full",
   "version": "0.3.1",
   "description": "Quill module for inserting placeholders",
   "main": "dist/placeholder-module.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jspaine/quill-placeholder-module.git"
+    "url": "git+https://github.com/elementsuite/quill-placeholder-module-full.git"
   },
   "keywords": [
     "quill",
@@ -22,9 +22,9 @@
   "author": "James Paine <painejs@hotmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jspaine/quill-placeholder-module/issues"
+    "url": "https://github.com/elementsuite/quill-placeholder-module-full/issues"
   },
-  "homepage": "https://github.com/jspaine/quill-placeholder-module#readme",
+  "homepage": "https://github.com/elementsuite/quill-placeholder-module-full#readme",
   "devDependencies": {
     "@types/quill": "0.0.31",
     "babel-core": "^6.25.0",
@@ -50,11 +50,6 @@
     "typescript": "^2.4.1",
     "webpack": "^3.1.0"
   },
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
   "typings": "./dist/src/placeholder-module.d.ts",
   "husky": {
     "hooks": {
