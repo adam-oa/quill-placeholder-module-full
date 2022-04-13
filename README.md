@@ -1,3 +1,5 @@
+# This has been forked to expose typescript for compilation as part of build. Otherwise it is identical to original
+
 # quill-placeholder-module
 Quill module for adding placeholders. [Demo](https://codepen.io/jspaine/pen/MozyNp)
 ## Install
