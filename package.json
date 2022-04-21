@@ -1,6 +1,6 @@
 {
   "name": "quill-placeholder-module-full",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Quill module for inserting placeholders",
   "main": "dist/placeholder-module.js",
   "scripts": {

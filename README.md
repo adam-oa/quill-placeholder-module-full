@@ -1,4 +1,9 @@
-# This has been forked to expose typescript for compilation as part of build. Otherwise it is identical to original
+# Why was this forked?
+
+* Expose typescript for compilation as part of build. 
+* Compatability with Quill 2
+
+This is maintained for elementsuite software but of course anyone is welcome to it :)
 
 # quill-placeholder-module
 Quill module for adding placeholders. [Demo](https://codepen.io/jspaine/pen/MozyNp)

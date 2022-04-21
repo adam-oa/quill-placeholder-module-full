@@ -1,5 +1,5 @@
 import * as QuillTypes from 'quill'
-import {default as ParchmentTypes} from 'parchment'
+import {Registry} from 'parchment'
 
 import getPlaceholderBlot from './placeholder-blot'
 import {Placeholder} from './placeholder'
@@ -12,7 +12,6 @@ export interface ModuleType {
 export default function getPlaceholderModule(Quill: QuillTypes.Quill, options?: {
   className?: string
 }): ModuleType {
-  const Parchment: typeof ParchmentTypes = Quill.import('parchment')
 
   const PlaceholderBlot = getPlaceholderBlot(Quill)
   PlaceholderBlot.className = options && options.className || 'ql-placeholder-content'
@@ -37,7 +36,7 @@ export default function getPlaceholderModule(Quill: QuillTypes.Quill, options?: 
         const delta = currrentContents.diff(oldDelta)
 
         const shouldRevert = delta.ops.filter(op => op.insert &&
-          op.insert.placeholder && op.insert.placeholder.required).length
+            op.insert.placeholder && op.insert.placeholder.required).length
 
         if (shouldRevert) {
           this.quill.updateContents(delta, Quill.sources.SILENT)
@@ -46,7 +45,7 @@ export default function getPlaceholderModule(Quill: QuillTypes.Quill, options?: 
     }
 
     onClick = (ev: QuillTypes.EditorEvent) => {
-      const blot = Parchment.find(ev.target.parentNode)
+      const blot = Registry.find(ev.target.parentNode)
 
       if (blot instanceof PlaceholderBlot) {
         const index = this.quill.getIndex(blot)

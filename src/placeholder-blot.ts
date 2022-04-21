@@ -1,17 +1,17 @@
 import * as QuillTypes from 'quill'
-import {default as ParchmentTypes} from 'parchment'
+import {EmbedBlot} from 'parchment'
 
 import {Placeholder} from './placeholder'
 
 export default function getPlaceholderBlot(Quill: QuillTypes.Quill): any {
-  const Embed: typeof ParchmentTypes.Embed = Quill.import('blots/embed')
+  const Embed: typeof EmbedBlot = Quill.import('blots/embed')
 
   class PlaceholderBlot extends Embed {
     static blotName = 'placeholder'
     static tagName = 'span'
     static className: string
     static delimiters: Array<string>
-    public domNode: HTMLElement
+    public domNode: HTMLElement = this.domNode
 
     static create(value: Placeholder) {
       let node: HTMLElement = <HTMLElement>super.create(value)
@@ -23,21 +23,12 @@ export default function getPlaceholderBlot(Quill: QuillTypes.Quill): any {
 
       const {delimiters} = PlaceholderBlot
       const label = typeof delimiters === 'string' ?
-        `${delimiters}${value.label}${delimiters}` :
-        `${delimiters[0]}${value.label}${delimiters[1] || delimiters[0]}`
+          `${delimiters}${value.label}${delimiters}` :
+          `${delimiters[0]}${value.label}${delimiters[1] || delimiters[0]}`
 
       const labelNode = document.createTextNode(label)
 
-      if (Quill.version < '1.3') {
-        const wrapper = document.createElement('span')
-        wrapper.setAttribute('contenteditable', 'false')
-        wrapper.appendChild(labelNode)
-
-        node.appendChild(wrapper)
-      } else {
-        node.appendChild(labelNode)
-      }
-
+      node.appendChild(labelNode)
 
       return node
     }
