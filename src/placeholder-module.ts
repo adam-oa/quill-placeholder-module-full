@@ -9,7 +9,7 @@ export interface ModuleType {
   new(quill: QuillTypes.Quill, options: ModuleOptions): any
 }
 
-export default function getPlaceholderModule(Quill: QuillTypes.Quill, options?: {
+export default function new getPlaceholderModule(Quill: QuillTypes.Quill, options?: {
   className?: string
 }): ModuleType {
 
